@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { urlFor, client } from "../client";
 
-export const About = () => {
+import { AppWrap } from "../wrapper";
+
+const About = () => {
   const [abouts, setAbouts] = useState([]);
 
   useEffect(() => {
@@ -12,11 +14,12 @@ export const About = () => {
   }, []);
 
   return (
-    <>
-      <h2 className="text-5xl leading-tight font-bold text-center mb-16">
+    <div className="min-h-screen w-full max-w-[1200px] border-b border-gray-200">
+      <div className="mt-24" />
+      <h2 className="text-5xl leading-tight font-bold text-center">
         Transformar ideias em produtos <br /> é minha Especialidade
       </h2>
-      <div className="w-full max-w-[1200] flex flex-wrap justify-center items-start mx-auto mb-24">
+      <div className="w-full max-w-[1200] flex flex-wrap justify-center items-start mx-auto">
         {abouts.map((about, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
@@ -35,6 +38,7 @@ export const About = () => {
           </motion.div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
+export default AppWrap(About, "about");

@@ -1,9 +1,12 @@
 import React from "react";
 import { MdArrowForwardIos } from "react-icons/md";
 
-export const Header = () => {
+import { AppWrap } from "../wrapper";
+
+const Header = () => {
   return (
-    <div className="min-h-screen max-w-[1200px] mx-auto">
+    <div className="min-h-screen w-full max-w-[1200px] mx-auto border-b border-gray-100">
+      <div className="mt-24" />
       <div className="text-center">
         <h1 className="text-7xl font-bold leading-tight px-24 pt-20">
           Oi! Eu sou Fred. <br />
@@ -29,3 +32,5 @@ export const Header = () => {
     </div>
   );
 };
+
+export default AppWrap(Header, "home");
