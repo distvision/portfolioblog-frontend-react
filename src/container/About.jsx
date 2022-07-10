@@ -14,16 +14,15 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen w-full max-w-[1200px] border-b border-gray-200">
-      <div className="mt-24" />
-      <h2 className="text-5xl leading-tight font-bold text-center">
+    <div className="pt-24 px-24 min-h-screen w-full max-w-[1200px] mx-auto border-b border-gray-100">
+      <h2 className="text-5xl leading-tight font-bold text-center pb-8">
         Transformar ideias em produtos <br /> é minha Especialidade
       </h2>
-      <div className="w-full max-w-[1200] flex flex-wrap justify-center items-start mx-auto">
+      <div className=" flex flex-wrap justify-center items-start mx-auto">
         {abouts.map((about, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.5, type: "tween" }}
             className="w-[300px] flex justify-start items-start flex-col m-8"
             key={about.title + index}
@@ -31,7 +30,7 @@ const About = () => {
             <img
               src={urlFor(about.imgUrl)}
               alt={about.title}
-              className="w-full h-[170px] rounded-2xl object-cover"
+              className="w-full h-[170px] object-cover"
             />
             <h3 className="text-2xl font-bold mt-5">{about.title}</h3>
             <p className="text-lg font-normal mt-2">{about.description}</p>
