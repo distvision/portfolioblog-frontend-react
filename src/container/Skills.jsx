@@ -20,7 +20,10 @@ export const Skills = () => {
   }, []);
 
   return (
-    <div className="flex w-full max-w-[1200px] flex-col justify-center items-center py-24 px-24 mx-auto">
+    <div
+      id="skills"
+      className="flex w-full max-w-[1200px] min-h-screen flex-col justify-center items-center py-24 px-24 mx-auto"
+    >
       <h2 className="capitalize text-5xl leading-tight font-bold text-center pb-8">
         Habilidades
       </h2>
@@ -30,8 +33,9 @@ export const Skills = () => {
           {skills.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col text-center m-4 transition-all duration-[0.3s] ease-in-out"
+              transition={{ duration: 0.3 }}
+              whileHover={{ translateY: -5 }}
+              className="flex flex-col text-center m-4"
               key={skill.name}
             >
               <div

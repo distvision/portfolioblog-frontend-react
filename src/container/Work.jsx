@@ -36,7 +36,10 @@ export const Work = () => {
   };
 
   return (
-    <div className="pt-24 pb-8 px-24 min-h-screen w-full max-w-[1200px] mx-auto">
+    <div
+      id="work"
+      className="pt-24 pb-8 px-24 min-h-screen w-full max-w-[1200px] mx-auto"
+    >
       <div className="flex justify-between items-center">
         <h2 className="text-5xl leading-tight font-bold text-center">
           Projetos
@@ -47,8 +50,10 @@ export const Work = () => {
               <div
                 key={index}
                 onClick={() => handleWorkFilter(item)}
-                className={`text-base font-medium capitalize py-2 px-4 bg-gray-100 text-gray-400 cursor-pointer hover:bg-accents-100 duration-[0.3s] ease-in-out ${
-                  activeFilter === item ? "bg-accents-100 text-gray-100" : ""
+                className={`text-base font-medium capitalize py-2 px-4 bg-gray-100 cursor-pointer hover:bg-accents-100 hover:text-gray-100 duration-[0.3s] ease-in-out ${
+                  activeFilter === item
+                    ? "bg-accents-100 text-gray-100"
+                    : "text-gray-400"
                 }`}
               >
                 {item}
@@ -60,14 +65,15 @@ export const Work = () => {
 
       <motion.div
         animete={animeteCard}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 0.8, delayChildren: 0.8 }}
         className="flex flex-wrap justify-center items-start pt-8"
       >
         {filterWork.map((work, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
-            whileHover={{ scale: 1.01 }}
-            transition={{ duration: 0.5, type: "tween" }}
+            whileHover={{ translateY: -5 }}
+            transition={{ duration: 0.3, type: "tween" }}
             className="flex flex-col w-[300px] justify-start items-start bg-neutral-800 p-1 m-4"
             key={index}
           >

@@ -3,7 +3,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 
 export const Header = () => {
   return (
-    <div className="min-h-screen w-full max-w-[1200px] mx-auto">
+    <div id="home" className="min-h-screen w-full max-w-[1200px] mx-auto">
       <div className="pt-24" />
       <div className="text-center">
         <h1 className="text-7xl font-bold leading-tight px-24 pt-20">
