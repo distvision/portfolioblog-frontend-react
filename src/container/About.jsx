@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { urlFor, client } from "../client";
+import React, { useEffect, useState } from "react";
+import { client, urlFor } from "../client";
 
-import { AppWrap } from "../wrapper";
-
-const About = () => {
+export const About = () => {
   const [abouts, setAbouts] = useState([]);
 
   useEffect(() => {
@@ -14,9 +12,9 @@ const About = () => {
   }, []);
 
   return (
-    <div className="pt-24 px-24 min-h-screen w-full max-w-[1200px] mx-auto border-b border-gray-100">
+    <div className="pt-24 px-24 min-h-screen w-full max-w-[1200px] mx-auto">
       <h2 className="text-5xl leading-tight font-bold text-center pb-8">
-        Transformar ideias em produtos <br /> é minha Especialidade
+        Serviços
       </h2>
       <div className=" flex flex-wrap justify-center items-start mx-auto">
         {abouts.map((about, index) => (
@@ -40,4 +38,3 @@ const About = () => {
     </div>
   );
 };
-export default AppWrap(About, "about");

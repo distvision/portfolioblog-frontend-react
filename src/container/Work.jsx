@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { AiFillGithub } from "react-icons/ai";
 
-import { AppWrap } from "../wrapper";
-import { urlFor, client } from "../client";
 import { MdArrowForwardIos } from "react-icons/md";
+import { client, urlFor } from "../client";
 
-const Work = () => {
+export const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [animeteCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
@@ -37,24 +36,26 @@ const Work = () => {
   };
 
   return (
-    <div className="pt-24 pb-8 px-24 min-h-screen w-full max-w-[1200px] mx-auto border-b border-gray-100">
-      <h2 className="text-5xl leading-tight font-bold text-center mb-8">
-        Meu Portfolio Criativo
-      </h2>
-      <div className="flex items-center justify-center space-x-4">
-        {["UI/UX", "Web App", "Mobile App", "React Js", "All"].map(
-          (item, index) => (
-            <div
-              key={index}
-              onClick={() => handleWorkFilter(item)}
-              className={`text-base font-medium capitalize py-2 px-4 bg-gray-100 text-gray-400 cursor-pointer hover:bg-accents-100 duration-[0.3s] ease-in-out ${
-                activeFilter === item ? "bg-accents-100 text-gray-100" : ""
-              }`}
-            >
-              {item}
-            </div>
-          )
-        )}
+    <div className="pt-24 pb-8 px-24 min-h-screen w-full max-w-[1200px] mx-auto">
+      <div className="flex justify-between items-center">
+        <h2 className="text-5xl leading-tight font-bold text-center">
+          Projetos
+        </h2>
+        <div className="flex items-center justify-center space-x-4">
+          {["UI/UX", "Web App", "Mobile App", "React Js", "All"].map(
+            (item, index) => (
+              <div
+                key={index}
+                onClick={() => handleWorkFilter(item)}
+                className={`text-base font-medium capitalize py-2 px-4 bg-gray-100 text-gray-400 cursor-pointer hover:bg-accents-100 duration-[0.3s] ease-in-out ${
+                  activeFilter === item ? "bg-accents-100 text-gray-100" : ""
+                }`}
+              >
+                {item}
+              </div>
+            )
+          )}
+        </div>
       </div>
 
       <motion.div
@@ -111,5 +112,3 @@ const Work = () => {
     </div>
   );
 };
-
-export default AppWrap(Work, "work");
