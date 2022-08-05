@@ -3,25 +3,27 @@ import { MdArrowForwardIos } from "react-icons/md";
 
 export const Header = () => {
   return (
-    <div id="home" className="min-h-screen w-full max-w-[1200px] mx-auto">
-      <div className="pt-24" />
+    <div
+      id="home"
+      className="px-8 min-h-screen flex flex-col items-center justify-center"
+    >
       <div className="text-center">
-        <h1 className="text-7xl font-bold leading-tight px-24 pt-20">
-          Ola! Eu sou Fred. <br />
-          Desenvolvedor e Designer
+        <h1 className="text-[2rem] leading-10 md:leading-tight font-bold pb-6 md:text-5xl">
+          Estúdio de design e desenvolvimento{" "}
+          <br className={`hidden md:block`} /> de marcas e produtos digitais
         </h1>
-        <p className="pt-6">
-          Sou Desenvolvedor Full Stack e UI/UX Designer baseado em Moçambique,
-          Beira.
+        <p className="text-xs font-bold text-gray-200 uppercase">
+          trabalhamos com marcas para definir e expressar suas experiências
+          online.
         </p>
       </div>
-      <div className="flex justify-center items-center text-lg font-medium mt-12 gap-7 ">
+      <div className="mt-8 px-6 py-4 border-2 border-gray-200 rounded-[5.625rem]">
         <a
           href="#"
-          className="flex items-center capitalize justify-evenly gap-2 py-4 px-8 bg-gray-100 text-gray-400"
+          className="flex items-center uppercase justify-center gap-3 text-base font-bold"
         >
           Vamos trabalhar juntos
-          <MdArrowForwardIos />
+          <MdArrowForwardIos size={20} />
         </a>
       </div>
     </div>

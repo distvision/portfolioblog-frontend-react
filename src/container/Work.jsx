@@ -38,28 +38,22 @@ export const Work = () => {
   return (
     <div
       id="work"
-      className="pt-24 pb-8 px-24 min-h-screen w-full max-w-[1200px] mx-auto"
+      className="px-8 flex flex-col justify-center min-h-screen mx-auto"
     >
-      <div className="flex justify-between items-center">
-        <h2 className="text-5xl leading-tight font-bold text-center">
+      <div className="">
+        <h2 className="text-[2.5rem] leading-tight font-bold mb-8 mt-8">
           Projetos
         </h2>
-        <div className="flex items-center justify-center space-x-4">
-          {["UI/UX", "Web App", "Mobile App", "React Js", "All"].map(
-            (item, index) => (
-              <div
-                key={index}
-                onClick={() => handleWorkFilter(item)}
-                className={`text-base font-medium capitalize py-2 px-4 bg-gray-100 cursor-pointer hover:bg-accents-100 hover:text-gray-100 duration-[0.3s] ease-in-out ${
-                  activeFilter === item
-                    ? "bg-accents-100 text-gray-100"
-                    : "text-gray-400"
-                }`}
-              >
-                {item}
-              </div>
-            )
-          )}
+        <div className="flex w-full justify-between">
+          {["All", "UI/UX", "Web App", "Mobile App"].map((item, index) => (
+            <div
+              key={index}
+              onClick={() => handleWorkFilter(item)}
+              className={`border-2 p-2 rounded-3xl`}
+            >
+              {item}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -67,26 +61,20 @@ export const Work = () => {
         animete={animeteCard}
         whileInView={{ opacity: [0, 1] }}
         transition={{ duration: 0.8, delayChildren: 0.8 }}
-        className="flex flex-wrap justify-center items-start pt-8"
+        className=""
       >
         {filterWork.map((work, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
             whileHover={{ translateY: -5 }}
             transition={{ duration: 0.3, type: "tween" }}
-            className="flex flex-col w-[300px] justify-start items-start bg-neutral-800 p-1 m-4"
+            className=""
             key={index}
           >
-            <img
-              src={urlFor(work.imgUrl)}
-              alt={work.name}
-              className="w-[300px] h-[170px] bg-gray-200 object-cover"
-            />
+            <img src={urlFor(work.imgUrl)} alt={work.name} className="" />
 
             <div className="">
-              <h4 className="text-base font-normal text-gray-100">
-                {work.tags[0]}
-              </h4>
+              <h4 className="">{work.tags[0]}</h4>
               <h3 className="text-lg font-bold text-gray-100 mt-2">
                 {work.title}
               </h3>

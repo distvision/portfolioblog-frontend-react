@@ -4,7 +4,7 @@ import { FaFacebookF } from "react-icons/fa";
 
 export const SocialMedia = () => {
   return (
-    <div className="flex items-center p-4 space-x-4">
+    <div className="md:flex md:items-center md:space-x-5 flex space-x-5">
       {[
         <a href="https://www.instagram.com/user_fred_/">
           <BsInstagram size={18} />
@@ -20,12 +20,7 @@ export const SocialMedia = () => {
           <FaFacebookF size={18} />
         </a>
       ].map((comp, index) => (
-        <div
-          key={comp + index}
-          className="flex justify-between items-center cursor-pointer"
-        >
-          {comp}
-        </div>
+        <div key={comp + index}>{comp}</div>
       ))}
     </div>
   );
