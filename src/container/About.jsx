@@ -25,7 +25,7 @@ export const About = () => {
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5, type: "tween" }}
-              className="w-[419px] flex justify-start items-start flex-col mx-2"
+              className="md:w-[419px] w-[290px] flex justify-start items-start flex-col mx-2"
               key={index}
             >
               <img

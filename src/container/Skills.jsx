@@ -28,19 +28,19 @@ export const Skills = () => {
         Habilidades
       </h2>
 
-      <div className="w-full flex">
-        <motion.div className="flex flex-1 flex-wrap justify-center items-center">
+      <div className="w-full flex justify-center">
+        <motion.div className="flex justify-center items-center flex-wrap">
           {skills.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.3 }}
               whileHover={{ translateY: -5 }}
-              className="flex m-2"
+              className="flex m-2 bg-gray-100 md:w-[192px] w-[150px] h-[170px] rounded-2xl"
               key={skill.name}
             >
               <div
                 style={{ backgroundColor: skill.bgColor }}
-                className="bg-gray-100 w-[192px] h-[200px] rounded-2xl flex flex-col justify-center items-center"
+                className="w-full flex flex-col justify-center items-center"
               >
                 <img
                   src={urlFor(skill.icon)}

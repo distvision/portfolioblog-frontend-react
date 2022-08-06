@@ -41,15 +41,15 @@ export const Work = () => {
       className="px-8 flex flex-col justify-center min-h-screen mx-auto bg-gray-500 pb-8"
     >
       <div className="md:flex md:items-center my-8">
-        <h2 className="md:text-[2.5rem] text-[2rem] leading-tight font-bold ">
+        <h2 className="md:text-[2.5rem] text-[2rem] leading-tight font-bold">
           Projetos
         </h2>
-        <div className="flex w-full md:justify-end justify-center space-x-5 md:mt-0 mt-8">
+        <div className="flex flex-wrap w-full md:justify-end justify-evenly md:space-x-5 md:mt-0 mt-8">
           {["All", "UI/UX", "Web App", "Mobile App"].map((item, index) => (
             <button
               key={index}
               onClick={() => handleWorkFilter(item)}
-              className={`border-2 py-2 px-4 md:px-5 rounded-3xl`}
+              className={`text-base border-2 py-1 px-2 md:px-5 rounded-3xl`}
             >
               {item}
             </button>
@@ -61,14 +61,14 @@ export const Work = () => {
         animete={animeteCard}
         whileInView={{ opacity: [0, 1] }}
         transition={{ duration: 0.8, delayChildren: 0.8 }}
-        className="flex justify-center md:flex-row flex-col md:gap-8 gap-5"
+        className="flex justify-center items-center md:flex-row flex-col md:gap-8 gap-5"
       >
         {filterWork.map((work, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
             whileHover={{ translateY: -5 }}
             transition={{ duration: 0.3, type: "tween" }}
-            className="w-[419px] flex justify-start items-start flex-col mt-5 bg-gray-400  rounded-2xl shadow-3xl"
+            className="md:w-[419px] w-[290px] flex justify-start items-start flex-col mt-5 bg-gray-400  rounded-2xl shadow-3xl"
             key={index}
           >
             <img
@@ -79,12 +79,12 @@ export const Work = () => {
 
             <div className="w-full mt-5 text-gray-100 px-2">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold">{work.title}</h3>
-                <h4 className="text-xs font-bold p-1 border-2 border-gray-100 rounded-md">
+                <h3 className="text-lg font-bold">{work.title}</h3>
+                <h4 className="text-xs font-bold p-1 border-2 border-gray-300 text-gray-300 rounded-md">
                   {work.tags[0]}
                 </h4>
               </div>
-              <p className="text-base font-medium text-gray-100 my-2">
+              <p className="text-base font-medium text-gray-200 my-2">
                 {work.description}
               </p>
               <div className="flex justify-between pb-2">
@@ -101,7 +101,7 @@ export const Work = () => {
                   href={work.codeLink}
                   className="flex items-center text-base font-medium gap-2"
                 >
-                  Ver Codigo do Projecto
+                  Ver Codigo
                   <AiFillGithub size={15} />
                 </a>
               </div>
