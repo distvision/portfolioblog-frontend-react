@@ -38,21 +38,21 @@ export const Work = () => {
   return (
     <div
       id="work"
-      className="px-8 flex flex-col justify-center min-h-screen mx-auto"
+      className="px-8 flex flex-col justify-center min-h-screen mx-auto bg-gray-500 pb-8"
     >
-      <div className="">
-        <h2 className="text-[2.5rem] leading-tight font-bold mb-8 mt-8">
+      <div className="md:flex md:items-center my-8">
+        <h2 className="md:text-[2.5rem] text-[2rem] leading-tight font-bold ">
           Projetos
         </h2>
-        <div className="flex w-full justify-between">
+        <div className="flex w-full md:justify-end justify-center space-x-5 md:mt-0 mt-8">
           {["All", "UI/UX", "Web App", "Mobile App"].map((item, index) => (
-            <div
+            <button
               key={index}
               onClick={() => handleWorkFilter(item)}
-              className={`border-2 p-2 rounded-3xl`}
+              className={`border-2 py-2 px-4 md:px-5 rounded-3xl`}
             >
               {item}
-            </div>
+            </button>
           ))}
         </div>
       </div>
@@ -61,27 +61,33 @@ export const Work = () => {
         animete={animeteCard}
         whileInView={{ opacity: [0, 1] }}
         transition={{ duration: 0.8, delayChildren: 0.8 }}
-        className=""
+        className="flex justify-center md:flex-row flex-col md:gap-8 gap-5"
       >
         {filterWork.map((work, index) => (
           <motion.div
             whileInView={{ opacity: 1 }}
             whileHover={{ translateY: -5 }}
             transition={{ duration: 0.3, type: "tween" }}
-            className=""
+            className="w-[419px] flex justify-start items-start flex-col mt-5 bg-gray-400  rounded-2xl shadow-3xl"
             key={index}
           >
-            <img src={urlFor(work.imgUrl)} alt={work.name} className="" />
+            <img
+              src={urlFor(work.imgUrl)}
+              alt={work.name}
+              className="w-full h-[303px] object-cover rounded-2xl"
+            />
 
-            <div className="">
-              <h4 className="">{work.tags[0]}</h4>
-              <h3 className="text-lg font-bold text-gray-100 mt-2">
-                {work.title}
-              </h3>
-              <p className="text-base font-normal text-gray-200 my-2">
+            <div className="w-full mt-5 text-gray-100 px-2">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold">{work.title}</h3>
+                <h4 className="text-xs font-bold p-1 border-2 border-gray-100 rounded-md">
+                  {work.tags[0]}
+                </h4>
+              </div>
+              <p className="text-base font-medium text-gray-100 my-2">
                 {work.description}
               </p>
-              <div className="flex flex-col">
+              <div className="flex justify-between pb-2">
                 <a
                   href={work.projectLink}
                   target="_blank"

@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <div
       id="home"
-      className="px-8 min-h-screen flex flex-col items-center justify-center"
+      className="px-8 min-h-screen flex flex-col items-center justify-center bg-gray-500"
     >
       <div className="text-center">
         <h1 className="text-[2rem] leading-10 md:leading-tight font-bold pb-6 md:text-5xl">
